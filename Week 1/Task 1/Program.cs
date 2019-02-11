@@ -8,12 +8,16 @@ namespace Task_1
 {
     class Program
     {
-        public static bool Prime(int num)   //making the method of boolean type for cheking if the number is prime
+        public static bool Prime(int num)   //making the method for cheking if the number is prime
         {
-            bool ok = false;   //making the parameter which is false at the beginning
+            bool ok = true;   //making the parameter which is true at the beginning
             if (num == 1)      // checking one of the case
             {
-                ok = true;       
+                ok = false;       
+            }
+            if (num == 2)
+            {
+                ok = true;
             }
             else
             {
@@ -21,7 +25,8 @@ namespace Task_1
                 {
                     if (num % i == 0)
                     {
-                        ok = true;    //if the number has dividers, then it's true; but we need the numbers without dividers, so we break the program
+                        ok = false;    //if the number has dividers, then it's false;
+                                       //but we need the numbers without dividers, so we break the program
                         break;
                     }
                 }
@@ -37,7 +42,7 @@ namespace Task_1
             for (int i = 0; i < n; i++)  //considering all elements in array
             {
                 int num = int.Parse(array[i]); //remaking the number from array to the int form
-                if (Prime(num) == false || num == 2)  //check the method 
+                if (Prime(num) == true)  //check the method 
                 {
                     cnt++;  //count the elements which are prime
                 }
@@ -46,7 +51,7 @@ namespace Task_1
             for (int i = 0; i < n; i++)  //repeat the operation to show all primes
             {
                 int num = int.Parse(array[i]);
-                if (Prime(num) == false || num == 2)
+                if (Prime(num) == true)
                 {
                     Console.Write(num + " "); //show the prime numbers
                 }

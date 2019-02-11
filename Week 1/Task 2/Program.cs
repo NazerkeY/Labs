@@ -26,16 +26,14 @@ namespace Task_2
     {
         public static void Increment(int year)
         {
-            year = year + 1;
+            year++; 
              Console.WriteLine(year);
         }
         static void Main(string[] args)
         {
             Student s = new Student("Assem", "1235009");
-           // Console.WriteLine("Enter the year of study:");
-           // int y = int.Parse(Console.ReadLine());
             s.PrintInfo();
-          //  Console.WriteLine($"Next year of study is: ");
+          Console.WriteLine($"Next year of study is: ");
             Increment(1);
          }
     }
