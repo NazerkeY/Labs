@@ -9,25 +9,25 @@ namespace Task_1
 {
     class Program
     {
-        public static bool Palindrome(string str)
+        public static bool Palindrome(string str) //Проверка на палиндром
         {
             bool ans = true;
             for(int i=0; i<str.Length; i++)
             {
-                if (str[i] != str[str.Length - i - 1])
+                if (str[i] != str[str.Length - i - 1])  //условно: если первый элемент не равняется последниму 
                 {
-                    ans = false;
+                    ans = false;                       //тогда это не палиндром
                     break;
                 }
             }
-            return ans;
+            return ans;    //возвращаем итоговый ответ проверки
         }
         static void Main(string[] args)
         {
-            FileStream file = new FileStream(@"C:\Users\Acer\Desktop\Solutions\Palindrome.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(file);
-            string text = sr.ReadToEnd();
-            if (Palindrome(text) == true)
+            FileStream file = new FileStream(@"C:\Users\Acer\Desktop\Solutions\Palindrome.txt", FileMode.Open, FileAccess.Read); //открываем и чтаем файл
+            StreamReader sr = new StreamReader(file);  //позволяет считывать файл
+            string text = sr.ReadToEnd();  //считываем запись в файле до конца
+            if (Palindrome(text) == true)   //проверяем на палиндром
             {
                 Console.WriteLine("YES");
             }
@@ -35,7 +35,7 @@ namespace Task_1
             {
                 Console.WriteLine("NO");
             }
-            sr.Close();
+            sr.Close();    //закрываем файлы
             file.Close();
         }
     }
