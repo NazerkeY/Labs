@@ -31,7 +31,6 @@ namespace Эскиз
         {
             if (cursor == index) {
 
-                Console.BackgroundColor = ConsoleColor.White; 
 
                 Console.BackgroundColor = ConsoleColor.Red;
             currentFs = fs; }  
@@ -51,14 +50,16 @@ namespace Эскиз
         {
             Console.BackgroundColor = ConsoleColor.Black;  
             Console.Clear();
-            directory = new DirectoryInfo(path); 
+            directory = new DirectoryInfo(path);
             FileSystemInfo[] fs = directory.GetFileSystemInfos();
+            Console.WriteLine(directory.Name + " " + fs.Length ); 
             for (int i = 0, k = 0; i < fs.Length; i++)  //проходимся по содержанию
             {
-                Color(fs[i], k); 
+                Color(fs[i], k);                
                 Console.WriteLine((i + 1) + ". " + fs[i].Name); //выводим пронумеровав
                 k++;
             }
+            
         }
         public void Up()  //метод - курсор вверх
         {

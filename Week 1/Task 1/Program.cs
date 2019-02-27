@@ -8,7 +8,7 @@ namespace Task_1
 {
     class Program
     {
-        public static bool Prime(int num)   //making the method for cheking if the number is prime
+        public static bool Prime(int num)   //making the method for checking if the number is prime
         {
             bool ok = true;   //making the parameter which is true at the beginning
             if (num == 1)      // checking one of the case
